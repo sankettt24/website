@@ -1,0 +1,145 @@
+.stats-section {
+  padding: 40px 0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.stat-number {
+  font-size: 56px;
+  font-weight: 900;
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Removed hover-specific styling to keep numbers static */
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Force no-hover behavior specifically within the homepage stats section */
+.stats-section .stat-item:hover {
+  transform: none;
+}
+.stats-section .stat-item:hover .stat-number {
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.stats-section .stat-item:hover::before {
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Removed hover lift effect */
+
+.stat-number {
+  font-size: 56px;
+  font-weight: 900;
+  display: block;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+}
+
+@media (max-width: 968px) {
+  .stats-section {
+    padding: 32px 0;
+  }
+
+  .stats-row {
+    gap: 40px;
+  }
+
+  .stat-number {
+    font-size: 48px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 28px 0;
+  }
+
+  .stats-row {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .stat-number {
+    font-size: 44px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-row {
+    gap: 20px;
+  }
+
+  .stat-number {
+    font-size: 38px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,254 @@
+.services-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e3c72;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #666;
+  font-weight: 400;
+}
+
+.services-carousel {
+  position: relative;
+  padding: 0 20px;
+}
+
+.service-slide {
+  padding: 0 15px;
+}
+
+.service-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  transition: left 0.5s;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  left: 0;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(30, 60, 114, 0.25);
+  border-color: #1e3c72;
+}
+
+.service-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, #f5f7fa, #e8ecf1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+}
+
+.service-card:hover .service-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1) rotate(10deg);
+}
+
+.service-icon {
+  font-size: 45px;
+  transition: transform 0.4s;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.15);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  min-height: 42px;
+  transition: color 0.3s;
+}
+
+.service-link {
+  display: inline-block;
+  color: #1e3c72;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .service-link {
+  color: white;
+}
+
+.service-card:hover .service-link {
+  transform: translateX(5px);
+}
+
+/* Slick Carousel Customization */
+.services-carousel .slick-dots {
+  bottom: -50px;
+}
+
+.services-carousel .slick-dots li {
+  margin: 0 5px;
+}
+
+.services-carousel .slick-dots li button:before {
+  font-size: 12px;
+  color: #1e3c72;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+.services-carousel .slick-dots li.slick-active button:before {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.services-carousel .slick-prev,
+.services-carousel .slick-next {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.services-carousel .slick-prev:hover,
+.services-carousel .slick-next:hover {
+  background: #1e3c72;
+  transform: scale(1.1);
+}
+
+.services-carousel .slick-prev {
+  left: -25px;
+}
+
+.services-carousel .slick-next {
+  right: -25px;
+}
+
+.services-carousel .slick-prev:before,
+.services-carousel .slick-next:before {
+  font-size: 24px;
+  opacity: 1;
+  color: #1e3c72;
+  transition: color 0.3s;
+}
+
+.services-carousel .slick-prev:hover:before,
+.services-carousel .slick-next:hover:before {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 0;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+  }
+
+  .services-carousel {
+    padding: 0 10px;
+  }
+
+  .service-slide {
+    padding: 0 10px;
+  }
+
+  .service-card {
+    padding: 30px 20px;
+  }
+
+  .service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .service-icon {
+    font-size: 40px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+    min-height: auto;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    min-height: auto;
+  }
+
+  .services-carousel .slick-dots {
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+}
