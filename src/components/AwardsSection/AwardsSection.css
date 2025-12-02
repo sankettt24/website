@@ -1,6 +1,18 @@
 .awards-section {
   padding: 80px 0;
-  background: #fff;
+  background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 40%, #ffffff 100%);
+  position: relative;
+}
+
+.awards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(249, 249, 249, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
 }
 
 .section-header {
