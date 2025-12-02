@@ -212,6 +212,41 @@
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
 }
 
+/* Simulated hover state (auto cycling) */
+.quick-link-tile.simulate-hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+.quick-link-tile.simulate-hover .gradient-orb.orb-1 {
+  transform: translate(-30px, 30px) scale(1.2);
+  opacity: 0.8;
+}
+.quick-link-tile.simulate-hover .gradient-orb.orb-2 {
+  transform: translate(30px, -30px) scale(1.3);
+  opacity: 0.9;
+}
+.quick-link-tile.simulate-hover .icon-circle {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+.quick-link-tile.simulate-hover .tile-icon {
+  transform: scale(1.1);
+}
+.quick-link-tile.simulate-hover .tile-text h3 {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.quick-link-tile.simulate-hover .tile-text p {
+  color: #333;
+}
+.quick-link-tile.simulate-hover .tile-hover-effect {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .quick-link-tile:hover .tile-text h3 {
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   -webkit-background-clip: text;
@@ -258,20 +293,26 @@
 @media (max-width: 768px) {
   .quick-links {
     margin-top: -80px;
-    padding: 0 0 60px 0;
+    padding: 0 0 50px 0;
   }
 
+  /* Show all three in a compact 3-column grid */
   .quick-links-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 0 12px;
   }
 
   .quick-link-tile {
-    height: 320px;
+    height: 240px; /* increased height for better visual presence */
+    border-radius: 16px;
+    display: flex;
   }
-  
+
   .tile-content {
-    padding: 35px 30px;
+    padding: 24px 20px;
+    justify-content: flex-start;
   }
 
   .quick-link-tile:hover {
@@ -279,66 +320,76 @@
   }
 
   .icon-circle {
-    width: 75px;
-    height: 75px;
-    margin-bottom: 25px;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
   }
 
   .tile-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .tile-text h3 {
-    font-size: 28px;
+    font-size: 22px;
+    margin: 0 0 10px 0;
   }
 
   .tile-text p {
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+    max-height: none;
+    overflow: visible; /* allow full content */
   }
   
   .explore-text {
-    font-size: 16px;
-    padding: 10px 24px;
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }
 
 @media (max-width: 480px) {
   .quick-links {
     margin-top: -60px;
-    padding: 0 0 50px 0;
+    padding: 0 0 40px 0;
   }
   
+  .quick-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
   .quick-link-tile {
-    height: 300px;
+    height: 220px; /* taller than square for readability */
+    border-radius: 14px;
   }
-  
   .tile-content {
-    padding: 30px 25px;
+    padding: 20px 16px;
   }
   
   .icon-circle {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
   }
   
   .tile-icon {
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
   }
   
   .tile-text h3 {
-    font-size: 26px;
+    font-size: 16px;
   }
   
   .tile-text p {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.45;
+    max-height: none;
   }
   
   .explore-text {
-    font-size: 15px;
-    padding: 10px 22px;
+    font-size: 11px;
+    padding: 7px 14px;
   }
   
   .tile-hover-effect {

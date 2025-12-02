@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import FadeContent from '../FadeContent/FadeContent';
 import './QuickLinks.css';
 
 const QuickLinks = () => {
   const { t } = useLanguage();
+  const [autoIndex, setAutoIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAutoIndex(prev => (prev + 1) % 3);
+    }, 3500); // cycle every 3.5s
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <div className="quick-links">
       <div className="container">
         <div className="quick-links-grid">
           <FadeContent blur={true} duration={0.6} delay={0} threshold={0.3}>
-            <a href="/deposit" className="quick-link-tile deposit">
+            <a href="/deposit" className={`quick-link-tile deposit ${autoIndex === 0 ? 'simulate-hover' : ''}`}>
               <div className="tile-background">
                 <div className="gradient-orb orb-1"></div>
                 <div className="gradient-orb orb-2"></div>
@@ -36,7 +44,7 @@ const QuickLinks = () => {
           </FadeContent>
 
           <FadeContent blur={true} duration={0.6} delay={0.15} threshold={0.3}>
-            <a href="/loan" className="quick-link-tile loans">
+            <a href="/loan" className={`quick-link-tile loans ${autoIndex === 1 ? 'simulate-hover' : ''}`}>
               <div className="tile-background">
                 <div className="gradient-orb orb-1"></div>
                 <div className="gradient-orb orb-2"></div>
@@ -62,7 +70,7 @@ const QuickLinks = () => {
           </FadeContent>
 
           <FadeContent blur={true} duration={0.6} delay={0.3} threshold={0.3}>
-            <a href="/services" className="quick-link-tile services">
+            <a href="/services" className={`quick-link-tile services ${autoIndex === 2 ? 'simulate-hover' : ''}`}>
               <div className="tile-background">
                 <div className="gradient-orb orb-1"></div>
                 <div className="gradient-orb orb-2"></div>
