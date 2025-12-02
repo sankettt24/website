@@ -116,30 +116,45 @@
   }
 
   .stats-row {
-    gap: 28px;
-    flex-wrap: wrap;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .stat-item {
+    gap: 6px;
   }
 
   .stat-number {
-    font-size: 44px;
+    font-size: 32px;
   }
 
   .stat-label {
-    font-size: 12px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
 }
 
 @media (max-width: 576px) {
   .stats-row {
-    gap: 20px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    padding: 0 10px;
+  }
+
+  .stat-item {
+    gap: 4px;
+    min-width: 0;
   }
 
   .stat-number {
-    font-size: 38px;
+    font-size: 24px;
+    letter-spacing: -0.5px;
   }
 
   .stat-label {
-    font-size: 11px;
-    letter-spacing: 1px;
+    font-size: 8px;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    text-align: center;
   }
 }

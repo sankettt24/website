@@ -43,6 +43,7 @@ export const translations = {
     
     // Sections
     investInFuture: 'Invest In Your Future',
+    chooseFinancialProducts: 'Choose from our wide range of financial products',
     servicesWeOffer: 'Services We Offer',
     newsAndEvent: 'News & Events',
     chairmanMessage: 'Chairman\'s Message',
@@ -193,6 +194,7 @@ export const translations = {
     
     // Sections
     investInFuture: 'आपल्या भविष्यात गुंतवणूक करा',
+    chooseFinancialProducts: 'आमच्या आर्थिक उत्पादनांच्या विस्तृत श्रेणीतून निवडा',
     servicesWeOffer: 'आम्ही देतो सेवा',
     newsAndEvent: 'बातम्या आणि कार्यक्रम',
     chairmanMessage: 'अध्यक्षांचा संदेश',

@@ -18,8 +18,8 @@ const Header = () => {
         <div className="container">
           <div className="top-bar-content">
             <div className="contact-info">
-              <span>📞 +91 22 35008395 / +91 22 35136888</span>
-              <span>✉️ info@shivsahyadripatpedhi.com</span>
+              <span className="contact-item">📞 +91 22 35008395 / +91 22 35136888</span>
+              <span className="contact-item">✉️ info@shivsahyadripatpedhi.com</span>
             </div>
             <div className="language-switch">
               <button onClick={toggleLanguage} className="lang-btn">
@@ -48,8 +48,15 @@ const Header = () => {
             </button>
 
             <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+              <button 
+                className="mobile-menu-close"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
               <ul>
-                <li><Link to="/">{t('home')}</Link></li>
+                <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>{t('home')}</Link></li>
                 <li className={`dropdown ${activeDropdown === 'about' ? 'mobile-active' : ''}`}>
                   <Link to="/about" onClick={(e) => {
                     if (window.innerWidth <= 968) {
@@ -58,10 +65,10 @@ const Header = () => {
                     }
                   }}>{t('about')} ▾</Link>
                   <ul className="dropdown-menu">
-                    <li><Link to="/about">Profile</Link></li>
-                    <li><Link to="/about#history">History</Link></li>
-                    <li><Link to="/about#vision-mission">Vision & Mission</Link></li>
-                    <li><Link to="/awards-achievements">Awards & Achievements</Link></li>
+                    <li><Link to="/about" onClick={() => setMobileMenuOpen(false)}>Profile</Link></li>
+                    <li><Link to="/about#history" onClick={() => setMobileMenuOpen(false)}>History</Link></li>
+                    <li><Link to="/about#vision-mission" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link></li>
+                    <li><Link to="/awards-achievements" onClick={() => setMobileMenuOpen(false)}>Awards & Achievements</Link></li>
                   </ul>
                 </li>
                 <li className={`dropdown ${activeDropdown === 'deposit' ? 'mobile-active' : ''}`}>
@@ -72,14 +79,14 @@ const Header = () => {
                     }
                   }}>{t('deposit')} ▾</Link>
                   <ul className="dropdown-menu">
-                    <li><Link to="/deposit/saving-deposit">Saving Deposit</Link></li>
-                    <li><Link to="/deposit/current-deposit">Current Deposit</Link></li>
-                    <li><Link to="/deposit/daily-deposit">Daily Deposit</Link></li>
-                    <li><Link to="/deposit/balkalyan-deposit">Balkalyan Deposit</Link></li>
-                    <li><Link to="/deposit/recurring-deposit">Recurring Deposit</Link></li>
-                    <li><Link to="/deposit/lakhpati-deposit">Lakhpati Deposit</Link></li>
-                    <li><Link to="/deposit/term-deposit">Term Deposit</Link></li>
-                    <li><Link to="/deposit/mis-deposit">MIS Deposit</Link></li>
+                    <li><Link to="/deposit/saving-deposit" onClick={() => setMobileMenuOpen(false)}>Saving Deposit</Link></li>
+                    <li><Link to="/deposit/current-deposit" onClick={() => setMobileMenuOpen(false)}>Current Deposit</Link></li>
+                    <li><Link to="/deposit/daily-deposit" onClick={() => setMobileMenuOpen(false)}>Daily Deposit</Link></li>
+                    <li><Link to="/deposit/balkalyan-deposit" onClick={() => setMobileMenuOpen(false)}>Balkalyan Deposit</Link></li>
+                    <li><Link to="/deposit/recurring-deposit" onClick={() => setMobileMenuOpen(false)}>Recurring Deposit</Link></li>
+                    <li><Link to="/deposit/lakhpati-deposit" onClick={() => setMobileMenuOpen(false)}>Lakhpati Deposit</Link></li>
+                    <li><Link to="/deposit/term-deposit" onClick={() => setMobileMenuOpen(false)}>Term Deposit</Link></li>
+                    <li><Link to="/deposit/mis-deposit" onClick={() => setMobileMenuOpen(false)}>MIS Deposit</Link></li>
                   </ul>
                 </li>
                 <li className={`dropdown ${activeDropdown === 'loan' ? 'mobile-active' : ''}`}>
@@ -90,11 +97,11 @@ const Header = () => {
                     }
                   }}>{t('loans')} ▾</Link>
                   <ul className="dropdown-menu">
-                    <li><Link to="/loan/vehicle-loan">Vehicle Loan</Link></li>
-                    <li><Link to="/loan/gold-loan">Gold Loan</Link></li>
-                    <li><Link to="/loan/machinery-loan">Machinery Loan</Link></li>
-                    <li><Link to="/loan/property-mortgage-loan">Property Mortgage Loan</Link></li>
-                    <li><Link to="/loan/personal-loan-emi">Personal Loan</Link></li>
+                    <li><Link to="/loan/vehicle-loan" onClick={() => setMobileMenuOpen(false)}>Vehicle Loan</Link></li>
+                    <li><Link to="/loan/gold-loan" onClick={() => setMobileMenuOpen(false)}>Gold Loan</Link></li>
+                    <li><Link to="/loan/machinery-loan" onClick={() => setMobileMenuOpen(false)}>Machinery Loan</Link></li>
+                    <li><Link to="/loan/property-mortgage-loan" onClick={() => setMobileMenuOpen(false)}>Property Mortgage Loan</Link></li>
+                    <li><Link to="/loan/personal-loan-emi" onClick={() => setMobileMenuOpen(false)}>Personal Loan</Link></li>
                   </ul>
                 </li>
                 <li className={`dropdown ${activeDropdown === 'services' ? 'mobile-active' : ''}`}>
@@ -105,15 +112,15 @@ const Header = () => {
                     }
                   }}>{t('services')} ▾</Link>
                   <ul className="dropdown-menu">
-                    <li><Link to="/services/locker">Locker</Link></li>
-                    <li><Link to="/services/micro-atm">Micro ATM</Link></li>
-                    <li><Link to="/services/core-banking">Core Banking</Link></li>
-                    <li><Link to="/services/sms-banking">SMS Banking</Link></li>
-                    <li><Link to="/mobile-banking-app">Mobile Banking App</Link></li>
+                    <li><Link to="/services/locker" onClick={() => setMobileMenuOpen(false)}>Locker</Link></li>
+                    <li><Link to="/services/micro-atm" onClick={() => setMobileMenuOpen(false)}>Micro ATM</Link></li>
+                    <li><Link to="/services/core-banking" onClick={() => setMobileMenuOpen(false)}>Core Banking</Link></li>
+                    <li><Link to="/services/sms-banking" onClick={() => setMobileMenuOpen(false)}>SMS Banking</Link></li>
+                    <li><Link to="/mobile-banking-app" onClick={() => setMobileMenuOpen(false)}>Mobile Banking App</Link></li>
                   </ul>
                 </li>
-                <li><Link to="/locations">{t('locations')}</Link></li>
-                <li><Link to="/contact">{t('contact')}</Link></li>
+                <li><Link to="/locations" onClick={() => setMobileMenuOpen(false)}>{t('locations')}</Link></li>
+                <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>{t('contact')}</Link></li>
               </ul>
             </nav>
           </div>

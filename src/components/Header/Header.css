@@ -28,23 +28,25 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
 .contact-info {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.contact-info span {
+.contact-info .contact-item {
   display: flex;
   align-items: center;
   gap: 8px;
   transition: transform 0.2s;
+  white-space: nowrap;
 }
 
-.contact-info span:hover {
+.contact-info .contact-item:hover {
   transform: translateY(-2px);
 }
 
@@ -114,6 +116,29 @@
   font-size: 28px;
   cursor: pointer;
   color: #1e3c72;
+}
+
+.mobile-menu-close {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #1e3c72;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  transform: rotate(90deg);
 }
 
 .main-nav ul {
@@ -241,6 +266,10 @@
     display: block;
   }
 
+  .mobile-menu-close {
+    display: block;
+  }
+
   .main-nav {
     position: fixed;
     top: 0;
@@ -293,9 +322,30 @@
     display: flex;
   }
 
+  .top-bar {
+    padding: 10px 0;
+  }
+
+  .top-bar-content {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
   .contact-info {
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
     font-size: 12px;
-    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .contact-info .contact-item {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .language-switch {
+    flex-shrink: 0;
   }
 
   .logo h1 {
@@ -308,7 +358,16 @@
 }
 
 @media (max-width: 576px) {
-  .contact-info span {
+  .top-bar {
+    padding: 8px 0;
+  }
+
+  .contact-info .contact-item {
     font-size: 11px;
+  }
+
+  .language-switch .lang-btn {
+    padding: 6px 16px;
+    font-size: 13px;
   }
 }
