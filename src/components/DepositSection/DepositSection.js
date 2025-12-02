@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './DepositSection.css';
 
@@ -160,6 +160,22 @@ const DepositSection = () => {
   const allItems = activeTab === 'deposit' ? deposits : loans;
   const itemsToShow = 6;
   const currentItems = allItems.slice(currentIndex, currentIndex + itemsToShow);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const autoScrollInterval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const nextIndex = prev + itemsToShow;
+        // If we've reached the end, reset to beginning
+        if (nextIndex >= allItems.length) {
+          return 0;
+        }
+        return nextIndex;
+      });
+    }, 5000); // Auto-scroll every 5 seconds
+
+    return () => clearInterval(autoScrollInterval);
+  }, [allItems.length, itemsToShow]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => Math.max(0, prev - itemsToShow));
