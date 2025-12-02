@@ -49,23 +49,11 @@ const About = () => {
 
   return (
     <div className="page-container about-page">
-      <div className="page-hero">
-        <div className="hero-overlay"></div>
-        <div className="hero-pattern"></div>
+      <div className="page-header-clean">
         <div className="container">
-          <div className="hero-content">
-            <span className="hero-label">Who We Are</span>
-            <ScrollReveal
-              baseOpacity={0.2}
-              enableBlur={true}
-              baseRotation={2}
-              blurStrength={8}
-              containerClassName=""
-              textClassName=""
-            >
-              About Shiv Sahyadri Patpedhi
-            </ScrollReveal>
-            <p>Empowering communities through trusted financial services since 1980s</p>
+          <div className="page-title-section">
+            <h1 className="page-title">About Shiv Sahyadri Patpedhi</h1>
+            <p className="page-subtitle">Empowering communities through trusted financial services since 1980s</p>
           </div>
         </div>
       </div>

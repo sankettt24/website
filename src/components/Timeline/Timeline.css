@@ -1,6 +1,6 @@
 .timeline-wrapper {
   width: 100%;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  background: #dae3ed;
   padding: 80px 0;
 }
 
@@ -61,11 +61,11 @@
   display: flex;
   flex-direction: column;
   z-index: 40;
-  align-items: center;
+  align-items: flex-start;
   top: 160px;
   align-self: flex-start;
-  max-width: 320px;
-  width: 100%;
+  width: auto;
+  flex-shrink: 0;
 }
 
 /* Timeline dot */
@@ -115,6 +115,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* Content wrapper */
@@ -122,7 +123,8 @@
   position: relative;
   padding-left: 80px;
   padding-right: 16px;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .timeline-content-card {
@@ -201,6 +203,68 @@
   }
 }
 
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    padding: 60px 0;
+  }
+
+  .timeline-container {
+    padding: 40px 20px;
+  }
+
+  .timeline-item-wrapper {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .timeline-content-wrapper {
+    padding-left: 70px;
+    padding-right: 16px;
+    width: 100%;
+    flex: none;
+  }
+
+  .timeline-title-mobile {
+    font-size: 24px;
+    padding-left: 70px;
+    white-space: normal;
+  }
+
+  .timeline-content-card {
+    padding: 25px 20px;
+  }
+
+  .timeline-content-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .timeline-item-wrapper {
+    padding-top: 30px;
+    gap: 20px;
+  }
+
+  .timeline-line-base {
+    left: 28px;
+  }
+
+  .timeline-dot-outer {
+    left: 8px;
+    height: 36px;
+    width: 36px;
+  }
+
+  .timeline-dot-inner {
+    height: 14px;
+    width: 14px;
+  }
+}
+
 @media (max-width: 576px) {
   .timeline-wrapper {
     padding: 60px 0;
@@ -216,10 +280,35 @@
   }
 
   .timeline-title-mobile {
-    font-size: 22px;
+    font-size: 20px;
+    padding-left: 60px;
   }
 
   .timeline-content-card {
-    padding: 24px;
+    padding: 20px 16px;
+  }
+
+  .timeline-content-card h4 {
+    font-size: 16px;
+  }
+
+  .timeline-content-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .timeline-line-base {
+    left: 24px;
+  }
+
+  .timeline-dot-outer {
+    left: 4px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .timeline-dot-inner {
+    height: 12px;
+    width: 12px;
   }
 }
